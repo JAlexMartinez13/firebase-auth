@@ -13,6 +13,7 @@ export default function Login({ setUser, user }){
     const auth = getAuth(app)
 
     useEffect(()=>{
+        
         const localUser =localStorage.getItem('displayName')    
 
         console.log('localUser from LS', localUser)   
