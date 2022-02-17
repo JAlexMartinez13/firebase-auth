@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { app } from '../ConnectAuth';
+import Button from 'react-bootstrap/Button';
+
 
 export default function Login({ setUser, user }){
     const [email, setEmail] = useState('');
@@ -47,12 +49,12 @@ export default function Login({ setUser, user }){
         <hr />
         <form onSubmit={handleFormSubmit}>
             <label>Email:
-                 <input type='email' value={email}
+                 <input placeholder="Email" type='email' value={email}
                  onChange={e =>  setEmail(e.target.value)}/>
                  </label>
             <br />
             <label>Password:
-                 <input type='password' value={password}
+                 <input placeholder="Password" type='password' value={password}
                    onChange={e =>  setPassword(e.target.value)}/>
                    </label>
             <br />
@@ -61,10 +63,12 @@ export default function Login({ setUser, user }){
         <button 
         onClick={handleGoogleLogin} 
           style={{
-            backgroundColor:'black',
-            color:'white',
+            backgroundColor:'tan',
+            color:'black',
             border:'none'}}>
             Sign in with Google</button>
+            <br/>
+           
         <p>Not a user?<Link to='/signup'>Sign up</Link></p>
         </>
     )

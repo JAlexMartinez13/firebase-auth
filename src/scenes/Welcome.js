@@ -21,10 +21,13 @@ export default function Welcome( {user, setUser} ){
     return (
     <>
         <h1>Welcome</h1>
+        <br/>
         <h2>{localStorage.getItem('displayName') || user.email}</h2>
+        <br/>
         {localStorage.getItem('profilePhoto')
         && <img src={localStorage.getItem('profilePhoto')} 
         alt="Profile pic of logged-in user"/>}
+        <br/>
         <button onClick={handleLogout}>Sign out</button>
     </>
     )
